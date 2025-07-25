@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Coaching Center - Quality Education for All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more styling */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-sun text-white text-3xl mr-2"></i>
+                        <span class="text-white text-2xl font-bold">Sunrise Coaching</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-white hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium">Home</a>
+                        <a href="#courses" class="text-white hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium">Courses</a>
+                        <a href="#about" class="text-white hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium">About</a>
+                        <a href="#testimonials" class="text-white hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium">Testimonials</a>
+                        <a href="#contact" class="text-white hover:text-gray-100 px-3 py-2 rounded-md text-lg font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-orange-600">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-white hover:bg-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#courses" class="text-white hover:bg-orange-500 block px-3 py-2 rounded-md text-base font-medium">Courses</a>
+                <a href="#about" class="text-white hover:bg-orange-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#testimonials" class="text-white hover:bg-orange-500 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="#contact" class="text-white hover:bg-orange-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Illuminate Your Future With Sunrise</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Quality education for students from 9th grade to university level with specialized courses in English and Computer Science</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#courses" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg text-lg transition duration-300">Explore Courses</a>
+                    <a href="#contact" class="bg-transparent hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 border-2 border-white rounded-lg text-lg transition duration-300">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-orange-500 mb-2">15+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-orange-500 mb-2">5000+</div>
+                    <div class="text-gray-600">Students Taught</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-orange-500 mb-2">98%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-orange-500 mb-2">50+</div>
+                    <div class="text-gray-600">Expert Faculty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Comprehensive Courses</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We offer specialized coaching for various academic levels and professional courses</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- School Courses -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-orange-500 p-4 text-white">
+                        <i class="fas fa-school text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">School Education</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>9th & 10th (Matric) - All Subjects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Special focus on Science & Mathematics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Regular tests and performance tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Board exam preparation</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <a href="#contact" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- College Courses -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-yellow-500 p-4 text-white">
+                        <i class="fas fa-graduation-cap text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">College Education</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>First Year & Second Year College</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Science, Commerce & Arts streams</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>University exam preparation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Competitive exam guidance</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <a href="#contact" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Courses -->
+                <div class="course-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-blue-500 p-4 text-white">
+                        <i class="fas fa-laptop-code text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">Professional Courses</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>English Language Courses (Basic to Advanced)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Computer Courses (MS Office, Programming, Web Design)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Student Loan Assistance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Career Counseling</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <a href="#contact" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Sunrise Coaching Center" class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Sunrise Coaching Center</h2>
+                    <p class="text-lg text-gray-600 mb-6">Established in 2008, Sunrise Coaching Center has been a beacon of quality education, helping thousands of students achieve academic excellence and professional success.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-orange-100 p-2 rounded-full">
+                                <i class="fas fa-check-circle text-orange-500 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Our Mission</h3>
+                                <p class="text-gray-600">To provide affordable, quality education that empowers students to reach their full potential.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-yellow-100 p-2 rounded-full">
+                                <i class="fas fa-users text-yellow-500 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Our Faculty</h3>
+                                <p class="text-gray-600">Highly qualified and experienced teachers who are passionate about teaching and student success.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-2 rounded-full">
+                                <i class="fas fa-chalkboard-teacher text-blue-500 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Teaching Methodology</h3>
+                                <p class="text-gray-600">Interactive classes, regular assessments, personalized attention, and practical learning approaches.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 transition duration-300">
+                            Learn More About Us
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Sunrise?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We go beyond traditional teaching methods to ensure student success</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-orange-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-graduate text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Personalized Learning</h3>
+                    <p class="text-gray-600">Small batch sizes ensure each student gets individual attention and customized learning plans.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-yellow-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-book-open text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Comprehensive Study Material</h3>
+                    <p class="text-gray-600">Well-researched notes, practice papers, and reference materials provided to all students.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Performance Tracking</h3>
+                    <p class="text-gray-600">Regular tests and progress reports help students and parents monitor academic growth.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Affordable Fees</h3>
+                    <p class="text-gray-600">Quality education at reasonable prices with flexible payment options and scholarship opportunities.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-purple-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-wifi text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Online Support</h3>
+                    <p class="text-gray-600">Access to online resources, doubt-solving sessions, and recorded lectures for continuous learning.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-red-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-briefcase text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Career Guidance</h3>
+                    <p class="text-gray-600">Expert counseling for higher education and career paths based on student aptitude and interests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Students Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from our successful students and their parents</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Priya Sharma</h4>
+                            <p class="text-orange-500">Class 10 Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Sunrise Coaching helped me improve my Science score from 65% to 92% in just 6 months. The teachers are so supportive and explain concepts in a way that's easy to understand."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Student" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Rahul Verma</h4>
+                            <p class="text-blue-500">First Year College</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The computer course at Sunrise gave me practical skills that helped me land an internship. Their teaching goes beyond textbooks with real-world applications."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Parent" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Mrs. Kapoor</h4>
+                            <p class="text-green-500">Parent</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"As a working parent, I appreciate the regular progress reports and parent-teacher meetings. My daughter's confidence has grown tremendously since joining Sunrise."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 transition duration-300">
+                    Share Your Experience
+                    <i class="fas fa-comment-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We'd love to hear from you. Contact us for course details, fees, or any queries.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 lg:p-12">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                            </div>
+                            
+                            <div>
+                                <label for="course" class="block text-sm font-medium text-gray-700 mb-1">Course Interested In</label>
+                                <select id="course" name="course" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                    <option value="">Select a course</option>
+                                    <option value="9th-10th">9th & 10th Class</option>
+                                    <option value="first-year">First Year College</option>
+                                    <option value="second-year">Second Year College</option>
+                                    <option value="english">English Language Course</option>
+                                    <option value="computer">Computer Course</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300"></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                    Send Message
+                                    <i class="fas fa-paper-plane ml-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="bg-orange-500 text-white p-8 lg:p-12">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-orange-400 p-3 rounded-full">
+                                    <i class="fas fa-map-marker-alt text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">Address</h4>
+                                    <p class="mt-1">123 Education Street, Knowledge City, India - 110001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-orange-400 p-3 rounded-full">
+                                    <i class="fas fa-phone-alt text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">Phone</h4>
+                                    <p class="mt-1">+91 98765 43210<br>+91 11 2345 6789</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-orange-400 p-3 rounded-full">
+                                    <i class="fas fa-envelope text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="mt-1">info@sunrisecoaching.com<br>admissions@sunrisecoaching.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-orange-400 p-3 rounded-full">
+                                    <i class="fas fa-clock text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">Working Hours</h4>
+                                    <p class="mt-1">Monday - Saturday: 8:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-orange-400 hover:bg-white hover:text-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-orange-400 hover:bg-white hover:text-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-orange-400 hover:bg-white hover:text-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-orange-400 hover:bg-white hover:text-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-orange-400 hover:bg-white hover:text-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.166915865297!2d-122.41941548468141!3d37.77492977975951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5b0c8b0f%3A0x8a0a0a0a0a0a0a0a!2sSan%20Francisco!5e0!3m2!1sen!2sus!4v1612325483123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-xl shadow-lg"></iframe>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="py-12 bg-gradient-to-r from-orange-500 to-yellow-400 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-8 lg:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="text-xl">Get updates on new courses, special offers, and educational tips directly to your inbox.</p>
+                </div>
+                <div>
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-transparent focus:ring-2 focus:ring-white focus:border-transparent text-gray-900">
+                        <button type="submit" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Subscribe
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                    <p class="mt-3 text-sm opacity-80">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-sun text-yellow-400 text-3xl mr-2"></i>
+                        <span class="text-2xl font-bold">Sunrise Coaching</span>
+                    </div>
+                    <p class="text-gray-400">Empowering students with quality education since 2008. Our mission is to help every student achieve their academic and professional goals.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#courses" class="text-gray-400 hover:text-white transition duration-300">Courses</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">9th & 10th Class</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">First Year College</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Second Year College</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">English Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Computer Courses</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-400"></i>
+                            <span>123 Education Street, Knowledge City, India - 110001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-yellow-400"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-yellow-400"></i>
+                            <span>info@sunrisecoaching.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-yellow-400"></i>
+                            <span>Mon-Sat: 8AM-8PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Sunrise Coaching. Design BY Yawer </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Button -->
+    <div class="floating-btn">
+        <a href="#contact" class="pulse bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fas fa-comment-dots text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-24 right-6 bg-orange-500 hover:bg-orange-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
